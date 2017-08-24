@@ -1,13 +1,14 @@
 ##data quality
 
-i=1
-for id in *fq.gz
+
+for id in *1.fastq.gz
 do 
-echo `date` "start do QC for " $id
+cd ${id%%_*}
+echo `date` "start do QC for " ${id%%_*}
 
-fastqc -t 20 --noextract -o ./  $id
+fastqc -t 20 --noextract -o ./  *fq.gz
 
-echo `date` "end do QC for " $id
-i=$((i+1))
+echo `date` "end do QC for " ${id%%_*}
+cd ..
 done 
 

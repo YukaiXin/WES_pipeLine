@@ -2,7 +2,7 @@
 
 ## require a config file 
 ## exp: 
-#sampleName  test_1_val_1.fq.gz   test_2_val_2.fq.gz
+#sampleName   
 reference=/home/ref/hg19/gatk/ucsc.hg19.fasta
 
 while read id
@@ -13,7 +13,7 @@ read2=`echo $id |awk '{print $3}'`
 echo $sample 
 echo $read1 
 echo $read2  
-
-nohup bwa mem -t 20 -R "@RG\tPL:Illumina\tID:foo\tSM:$sample" $reference $read1 $read2 1> $sample.sam 2>>bwa.log &
-
+cd $(sample} 
+nohup bwa mem -t 10 -R "@RG\tPL:Illumina\tID:foo\tSM:$sample" $reference *1.fq.gz *2.fq.gz 1> $sample.sam 2>>bwa.log &
+cd ..
 done <$1
