@@ -9,9 +9,6 @@ sum  = 0
 THE_CHROM_LIST = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6','chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12','chr13', 'chr14', 'chr15','chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chr21', 'chr22', 'chrX', 'chrY']
 
 
-#output = open(r'C:\Users\ykx\PycharmProjects\study\LSQ_depth.txt', 'w')
-#file_read = open(r"C:\Users\ykx\PycharmProjects\study\fushengyi.txt", 'rU')
-with open(sys.argv[2], 'w') as outpu
 output = open(sys.argv[2], 'w')##exp : LSQ_chr_depth_summary.txt
 file_read = open(sys.argv[1], 'rU')
 
