@@ -14,7 +14,7 @@ python3 /home/kxyu/codes/WES_pipeline/04_2_chromosome_depth_summary.py  ${id%%_*
 
 echo "make plot"
 path= $(cd `dirname $0`; pwd)
-Rscript /home/kxyu/codes/WES_pipeline/04_3_make_depth_summary_plot.R  $path
+Rscript /home/kxyu/codes/WES_pipeline/04_3_make_depth_summary_plot.R  $path  /${id%%_*}_chr_depth_summary.txt
 
 cd ..
 
