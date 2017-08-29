@@ -13,7 +13,7 @@ plot_theme <- theme(axis.text.y = element_text(angle = 90), axis.text=element_te
 
 #####chromosome depth summary plot
 
-chr_dt <- na.omit(data.frame(chrome = sData$chrome, mean_depth = LSQ_data$chr_depth_sum))
+chr_dt <- na.omit(data.frame(chrome = sData$chrome, mean_depth = sData$chr_depth_sum))
 
 chr_plot <- ggplot(chr_dt, aes(x = chrome, y = mean_depth))+
   geom_bar(stat = "identity")+ plot_theme +

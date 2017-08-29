@@ -4,7 +4,7 @@ for i in *_sorted.bam
 do
 echo $i
 
-nohup  java -jar $picard MarkDuplicates \
+ java -jar $picard MarkDuplicates \
 	I=$i \
 	O=${i%%_*}_remove_duplicates.bam \
 	M=${i%%_*}_remove_dup_metrics.txt \
@@ -22,7 +22,7 @@ samtools stats  ${i%%_*}_remove_duplicates.bam  > tem_summary_reads
 
 grep ^SN tem_summary_reads > ${i%%_*}_summary_reads.txt
 
-rm -rf tem_summary_reads &
+rm -rf tem_summary_reads 
 done 
 
 
