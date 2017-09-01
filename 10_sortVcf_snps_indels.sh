@@ -4,10 +4,12 @@ for id in *1.fastq.gz
 
 do
 cd ${id%%_*}
-echo ${id%%_*}
+
+#Progress report
+echo "Sample " ${id%%_*} " SortVcf"
 
 nohup java -jar  $picard SortVcf    \
-    I=*_filtered_indels.vcf \
+    I=${id%%_*}_filtered_indels.vcf \
     I=${id%%_*}_filtered_snps.vcf    \
     O=../sort_${id%%_*}.vcf
  

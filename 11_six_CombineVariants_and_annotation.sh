@@ -1,6 +1,6 @@
-awk '{print $1}' sample > tem_sample
 
-awk '{for(i=1;i<=NF;i++)a[NR,i]=$i}END{for(j=1;j<=NF;j++)for(k=1;k<=NR;k++)printf k==NR?a[k,j] RS:a[k,j] FS}' tem_sample > tem_sample_1
+
+awk '{for(i=1;i<=NF;i++)a[NR,i]=$i}END{for(j=1;j<=NF;j++)for(k=1;k<=NR;k++)printf k==NR?a[k,j] RS:a[k,j] FS}' $1 > tem_sample_1
 
 while read id
 do

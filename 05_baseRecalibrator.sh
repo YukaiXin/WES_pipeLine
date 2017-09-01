@@ -1,7 +1,11 @@
 for i in *1.fastq.gz
 do
 cd ${i%%_*}
-echo ${i%%_*}
+
+
+#Progress report
+echo "Sample " ${i%%_*} " BaseRecalibrator"
+
 nohup java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
         -nct 10 \
 	    -T BaseRecalibrator \
