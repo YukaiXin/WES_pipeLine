@@ -9,7 +9,7 @@ echo "Sample " ${i%%_*} " calling indels"
 nohup java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
 	-T SelectVariants \
 	-R /home/ref/hg19/gatk/ucsc.hg19.fasta \
-	-V *_raw_variants.vcf \
+	-V ${i%%_*}_raw_variants.vcf \
 	-selectType INDEL \
 	-o ${i%%_*}_raw_indels.vcf 
 
