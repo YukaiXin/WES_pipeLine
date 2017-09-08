@@ -6,8 +6,8 @@ Args <- commandArgs()
 path <- Args[6]
 mfile <- Args[7]
 
-
-sData <- read.table(paste(path, mfile, sep=""), header = TRUE,sep='\t')
+str <- paste("/", mfile, sep="")
+sData <- read.table(paste(path, str, sep=""), header = TRUE,sep='\t')
 
 plot_theme <- theme(axis.text.y = element_text(angle = 90), axis.text=element_text(size=12), legend.position = c(.8,.8), axis.title=element_text(size=15,face="bold"), legend.title = element_text(size = 12,face = "bold"), legend.text = element_text(size = 10,face = "bold"), panel.grid.major = element_blank(), axis.line = element_line(colour = "black"))
 

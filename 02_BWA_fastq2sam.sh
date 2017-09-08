@@ -17,7 +17,7 @@ read2=`echo $id |awk '{print $3}'`
 echo "Sample : "$sample 
 
 cd ${sample} 
-nohup bwa mem -t 10 -R "@RG\tPL:Illumina\tID:foo\tSM:$sample" $reference *1.fq.gz *2.fq.gz 1> $sample.sam 2>>bwa.log &
+bwa mem -t 10 -R "@RG\tPL:Illumina\tID:foo\tSM:$sample" $reference *1.fq.gz *2.fq.gz 1> $sample.sam 2>>bwa.log
 
 cd ..
 done <$1
