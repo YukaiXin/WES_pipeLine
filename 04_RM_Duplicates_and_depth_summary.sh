@@ -17,7 +17,7 @@ python3 /home/kxyu/codes/WES_pipeLine/04_2_chromosome_depth_summary.py  ${id%%_*
 #Progress report
 echo "Sample : " ${id%%_*} " make depth plot"
 path= $(cd `dirname $0`; pwd)
-Rscript /home/kxyu/codes/WES_pipeLine/04_3_make_depth_summary_plot.R  $path  ${id%%_*}_chr_depth_summary.txt
+Rscript /home/Codes/WES_pipeLine/04_3_make_depth_summary_plot.R  $path  ${id%%_*}_chr_depth_summary.txt
 
 cd ..
 

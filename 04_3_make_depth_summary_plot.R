@@ -16,7 +16,7 @@ plot_theme <- theme(axis.text.y = element_text(angle = 90), axis.text=element_te
 chr_dt <- na.omit(data.frame(chrome = sData$chrome, mean_depth = sData$chr_depth_sum))
 
 chr_plot <- ggplot(chr_dt, aes(x = chrome, y = mean_depth))+
-  geom_bar(stat = "identity")+ plot_theme +
+  geom_bar(stat = "identity", fill= "red")+ plot_theme +
  labs( y = "Mean depth")
 
 ggsave(plot = chr_plot, filename = file.path(path, "mean_depth.png"), width = 10, height = 6)
