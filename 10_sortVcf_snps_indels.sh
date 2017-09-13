@@ -8,14 +8,14 @@ cd ${id%%_*}
 #Progress report
 echo "Sample " ${id%%_*} " SortVcf"
 
-nohup java -jar  $picard SortVcf    \
+java -jar  $picard SortVcf    \
     I=${id%%_*}_filtered_indels.vcf \
     I=${id%%_*}_filtered_snps.vcf    \
-    O=../sort_${id%%_*}.vcf
+    O= sort_${id%%_*}.vcf
  
-grep -v 'chrUn' sort_${id%%_*}.vcf > sort_${id%%_*}_indel_snps.vcf
+grep -v 'chr.*_' sort_${id%%_*}.vcf > sort_${id%%_*}_indel_snps.vcf
 
-rm -rf sort_${id%%_*}.* >>sortVcf.log &
+rm -rf sort_${id%%_*}.* 
 cd ..
 
 done
