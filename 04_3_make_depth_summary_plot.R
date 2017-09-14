@@ -7,19 +7,22 @@ path <- Args[6]
 mfile <- Args[7]
 
 str <- paste("/", mfile, sep="")
-sData <- read.table(paste(path, str, sep=""), header = TRUE,sep='\t')
+sData <- read.table(paste(path, str, sep=""), header = TRUE, sep='\t')
 
-plot_theme <- theme(axis.text.y = element_text(angle = 90), axis.text=element_text(size=12), legend.position = c(.8,.8), axis.title=element_text(size=15,face="bold"), legend.title = element_text(size = 12,face = "bold"), legend.text = element_text(size = 10,face = "bold"), panel.grid.major = element_blank(), axis.line = element_line(colour = "black"))
+plot_theme <- theme(axis.text.y = element_text(angle = 90), axis.text=element_text(size=12), legend.position = c(.8, .8), axis.title=element_text(size=15,face="bold"), legend.title = element_text(size = 12,face = "bold"), legend.text = element_text(size = 10,face = "bold"), panel.grid.major = element_blank(), axis.line = element_line(colour = "black"))
 
 #####chromosome depth summary plot
 
 chr_dt <- na.omit(data.frame(chrome = sData$chrome, mean_depth = sData$chr_depth_sum))
+chr_dt$chrome = factor(chr_dt$chrome, levels = c("chr1", "chr2", "chr3", "chr4", "chr5","chr6", "chr7", "chr8", "chr9", "chr10","chr11", "chr12", "chr13", "chr14", "chr15","chr16", "chr17", "chr18", "chr19", "chr20","chr21", "chr22", "chrX", "chrY"))
+
+
 
 chr_plot <- ggplot(chr_dt, aes(x = chrome, y = mean_depth))+
-  geom_bar(stat = "identity", fill= "red")+ plot_theme +
+  geom_bar(stat = "identity", fill= "red") + plot_theme +
  labs( y = "Mean depth")
 
-ggsave(plot = chr_plot, filename = file.path(path, "mean_depth.png"), width = 10, height = 6)
+ggsave(plot = chr_plot, filename = file.path(path, "mean_depth.png"), width = 16, height = 10)
 ####################################
 
 
