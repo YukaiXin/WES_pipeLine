@@ -49,7 +49,7 @@ for id in range(0, 500):
 
     p = round(arr[id] / sum, 4) ##
     a = round((tem_sum-arr[id])/sum, 4)
-    print(id,"\t",arr[id],"\t",p,"\t", a)
+    print(id, "\t", arr[id], "\t", p ,"\t", a)
 
     if id < len(THE_CHROM_LIST):
         chr_n = int(chr_Dict[THE_CHROM_LIST[id]]/ chr_count[THE_CHROM_LIST[id]])
