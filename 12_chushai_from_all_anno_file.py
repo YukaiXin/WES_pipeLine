@@ -4,9 +4,9 @@ import sys
 FITER_GENES_CONDITION_LIST = ['intergenic', 'UTR3' , 'UTR5', 'downstream', 'intronic', 'upstream', 'ncRNA_exonic' , 'ncRNA_intronic', 'intronic', 'ncRNA_splicing']
 THE_CHROM_LIST = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6','chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12','chr13', 'chr14', 'chr15','chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chrM', 'chrX', 'chrY']
 
-#file_read = open(r'C:\Users\ykx\PycharmProjects\study\output_CombineVariants.hg19_multianno.txt', 'r')
+
 file_read = open(sys.argv[1], 'r')
-#file_write = open(r'C:\Users\ykx\PycharmProjects\study\chushai_output_CombineVariants.hg19_multianno.txt', 'w')
+
 file_write = open(sys.argv[2], 'w')
 
 count = 0

@@ -21,12 +21,12 @@ echo $sample6
 java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
 -T CombineVariants \
    -R /home/ref/hg19/gatk/ucsc.hg19.fasta \
-   --variant:$sample1 $sample1/sort_$sample1_indel_snps.vcf \
-   --variant:$sample2 $sample2/sort_$sample2_indel_snps.vcf \
-   --variant:$sample3 $sample3/sort_$sample3_indel_snps.vcf \
-   --variant:$sample4 $sample4/sort_$sample4_indel_snps.vcf \
-   --variant:$sample5 $sample5/sort_$sample5_indel_snps.vcf \
-   --variant:$sample6 $sample6/sort_$sample6_indel_snps.vcf \
+   --variant:$sample1 ${sample1}/sort_${sample1}_indel_snps.vcf \
+   --variant:$sample2 ${sample2}/sort_${sample2}_indel_snps.vcf \
+   --variant:$sample3 ${sample3}/sort_${sample3}_indel_snps.vcf \
+   --variant:$sample4 ${sample4}/sort_${sample4}_indel_snps.vcf \
+   --variant:$sample5 ${sample5}/sort_${sample5}_indel_snps.vcf \
+   --variant:$sample6 ${sample6}/sort_${sample6}_indel_snps.vcf \
    -o output_CombineVariants.vcf \
    -genotypeMergeOptions PRIORITIZE \
    -priority $sample1,$sample2,$sample3,$sample4,$sample5,$sample6

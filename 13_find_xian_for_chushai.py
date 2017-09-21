@@ -2,7 +2,6 @@
 
 import sys,vcf,types
 
-#file = open(r'C:\Users\ykx\PycharmProjects\study\chushai_output_CombineVariants.hg19_multianno.txt', 'r')
 file = open(sys.argv[1], 'r')
 
 LSQ_dict1 ={}
