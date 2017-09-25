@@ -27,6 +27,12 @@ you need to create a config files£¬just like below:
 then you just run the 02_BWA script using that config files
 
 
+#Following R package:
+
+ggplot2
+
+gridExtra
+
 
 
 
