@@ -5,12 +5,11 @@ FITER_GENES_CONDITION_LIST = ['intergenic', 'UTR3' , 'UTR5', 'downstream', 'intr
 THE_CHROM_LIST = ['chr1', 'chr2', 'chr3', 'chr4', 'chr5', 'chr6','chr7', 'chr8', 'chr9', 'chr10', 'chr11', 'chr12','chr13', 'chr14', 'chr15','chr16', 'chr17', 'chr18', 'chr19', 'chr20', 'chrM', 'chrX', 'chrY']
 
 
-file_read = open(sys.argv[1], 'r')
-
 file_write = open(sys.argv[2], 'w')
 
 count = 0
-for line in file_read.readlines():
+with open(sys.argv[1], 'r') as file_read:
+    for line in file_read.readlines():
 
     lineList = line.split('\t')
     if count is 0:
@@ -59,5 +58,4 @@ for line in file_read.readlines():
     if isFiter is False:
             file_write.write(line)
  
-file_read.close()
 file_write.close()
