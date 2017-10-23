@@ -2,7 +2,7 @@
 reference=/home/ref/hg19/gatk/ucsc.hg19.fasta
 
 
-for i in *1.fq.gz
+for i in *1.fastq.gz
 do
 cd ${i%%_*}
 

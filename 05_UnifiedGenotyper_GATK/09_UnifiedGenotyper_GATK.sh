@@ -1,6 +1,5 @@
 ##
 reference=/home/ref/hg19/gatk/ucsc.hg19.fasta
-gatk = /home/biosoftware/install_pkg/GenomeAnalysisTK.jar
 
 
 
@@ -11,7 +10,7 @@ cd ${i%%_*}
 #Progress report
 echo "Sample " ${i%%_*} " UnifiedGenotyper"
 
-java -Xmx4g -jar $gatk \
+java -Xmx4g -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
     -T UnifiedGenotyper \
     -glm BOTH \
     -R $reference  \
