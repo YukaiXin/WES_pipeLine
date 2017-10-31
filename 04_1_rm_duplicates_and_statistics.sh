@@ -1,5 +1,7 @@
 ## 1. remove duplicates
 
+##  paramter "$1" is deb file path
+
 for i in *_sorted.bam
 do
 
@@ -15,7 +17,7 @@ do
 
 ## 2. Computes the depth at each position or region
 
-samtools depth -a -b /home/wyy/project/xiaoerjixing/STATS/sureselect_v5_start+1.bed ${i%%_*}_remove_duplicates.bam > ${i%%_*}_depth.txt	
+samtools depth -a -b $1 ${i%%_*}_remove_duplicates.bam > ${i%%_*}_depth.txt	
 
 
 ## 3. Summary read information
