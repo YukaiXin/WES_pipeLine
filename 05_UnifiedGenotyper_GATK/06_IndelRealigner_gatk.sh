@@ -1,6 +1,6 @@
 ##
 reference=/home/ref/hg19/gatk/ucsc.hg19.fasta
-
+bedFile=$1
 for i in *1.fastq.gz
 do
 cd ${i%%_*}
@@ -16,7 +16,7 @@ java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
 -targetIntervals ${i%%_*}_realigner.intervals \
 -known /home/database/gatk/dbsnp_138.hg19.vcf \
 -known /home/database/gatk/Mills_and_1000G_gold_standard.indels.hg19.sites.vcf \
+-L $bedFile\
 -o ${i%%_*}_realigned.bam
-
 cd ..
 done 

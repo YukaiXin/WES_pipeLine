@@ -28,7 +28,7 @@ then you just run the 02_BWA script using that config files
 
 ##
 
-When you execute the fourth step script, you need to enter the deb file path as a parameter
+When you execute 04,05 step script, you need to enter the deb file path as a parameter
 
 #Following R package:
 

@@ -1,6 +1,6 @@
 ##
 reference=/home/ref/hg19/gatk/ucsc.hg19.fasta
-
+bedFile=$1
 for i in *1.fastq.gz
 do
 cd ${i%%_*}
@@ -12,6 +12,7 @@ java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
 	-nct 10 \
 	-T PrintReads \
 	-R $reference \
+        -L $bedFile
 	-I *${i%%_*}_remove_duplicates.bam \
 	-BQSR ${i%%_*}_recal_data.table \
 	-o ${i%%_*}_recal_reads.bam 
