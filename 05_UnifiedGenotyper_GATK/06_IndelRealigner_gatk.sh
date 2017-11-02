@@ -16,7 +16,8 @@ java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
 -targetIntervals ${i%%_*}_realigner.intervals \
 -known /home/database/gatk/dbsnp_138.hg19.vcf \
 -known /home/database/gatk/Mills_and_1000G_gold_standard.indels.hg19.sites.vcf \
--L $bedFile\
--o ${i%%_*}_realigned.bam
+--fix_misencoded_quality_scores \
+-L $bedFile \
+-o ${i%%_*}_realigned.bam 
 cd ..
 done 

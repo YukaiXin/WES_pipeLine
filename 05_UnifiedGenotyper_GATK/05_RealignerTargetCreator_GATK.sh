@@ -15,8 +15,7 @@ java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
 -I ${i%%_*}_remove_duplicates.bam \
 -known /home/database/gatk/dbsnp_138.hg19.vcf \
 -known /home/database/gatk/Mills_and_1000G_gold_standard.indels.hg19.sites.vcf \
+--fix_misencoded_quality_scores \
 -o ${i%%_*}_realigner.intervals
-
-
 cd ..
 done 
