@@ -12,8 +12,9 @@ java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
 	-nct 10 \
 	-T PrintReads \
 	-R $reference \
-        -L $bedFile
-	-I *${i%%_*}_remove_duplicates.bam \
+        -L $bedFile \
+        --fix_misencoded_quality_scores \  
+        -I *${i%%_*}_remove_duplicates.bam \
 	-BQSR ${i%%_*}_recal_data.table \
 	-o ${i%%_*}_recal_reads.bam 
 

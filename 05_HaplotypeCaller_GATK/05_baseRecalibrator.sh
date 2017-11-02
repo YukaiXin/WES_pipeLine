@@ -15,6 +15,7 @@ java -jar /home/biosoftware/install_pkg/GenomeAnalysisTK.jar \
         -I ${i%%_*}_remove_duplicates.bam \
         -knownSites /home/database/gatk/dbsnp_138.hg19.vcf \
         -L $bedFile\
+        --fix_misencoded_quality_scores \
         -knownSites /home/database/gatk/Mills_and_1000G_gold_standard.indels.hg19.sites.vcf \
         -o ${i%%_*}_recal_data.table
 
